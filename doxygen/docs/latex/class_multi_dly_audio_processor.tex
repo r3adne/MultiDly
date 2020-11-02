@@ -1,0 +1,71 @@
+\hypertarget{class_multi_dly_audio_processor}{}\doxysection{Multi\+Dly\+Audio\+Processor Class Reference}
+\label{class_multi_dly_audio_processor}\index{MultiDlyAudioProcessor@{MultiDlyAudioProcessor}}
+Inheritance diagram for Multi\+Dly\+Audio\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_multi_dly_audio_processor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a5aea5f9e3aaa60d03e6f2dc4111c4d8c}\label{class_multi_dly_audio_processor_a5aea5f9e3aaa60d03e6f2dc4111c4d8c}} 
+void {\bfseries prepare\+To\+Play} (double sample\+Rate, int samples\+Per\+Block) override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a11bcd8265215076299f08ed67934c9df}\label{class_multi_dly_audio_processor_a11bcd8265215076299f08ed67934c9df}} 
+void {\bfseries release\+Resources} () override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_aa24eb602c3ac4c5cf28584cb51029a6b}\label{class_multi_dly_audio_processor_aa24eb602c3ac4c5cf28584cb51029a6b}} 
+bool {\bfseries is\+Buses\+Layout\+Supported} (const Buses\+Layout \&layouts) const override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_ad8c37c9ec1f7c23859010a2635b6f144}\label{class_multi_dly_audio_processor_ad8c37c9ec1f7c23859010a2635b6f144}} 
+void {\bfseries process\+Block} (juce\+::\+Audio\+Buffer$<$ float $>$ \&, juce\+::\+Midi\+Buffer \&) override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a6fdaa1372ea147b88bd542904c30048b}\label{class_multi_dly_audio_processor_a6fdaa1372ea147b88bd542904c30048b}} 
+juce\+::\+Audio\+Processor\+Editor $\ast$ {\bfseries create\+Editor} () override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a20b96f8ea843356132147309d8e42b80}\label{class_multi_dly_audio_processor_a20b96f8ea843356132147309d8e42b80}} 
+bool {\bfseries has\+Editor} () const override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a8d9b8bead64959c6999f21d598233fe5}\label{class_multi_dly_audio_processor_a8d9b8bead64959c6999f21d598233fe5}} 
+const juce\+::\+String {\bfseries get\+Name} () const override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a7d1bdb05b2dc811589057f34b8edc852}\label{class_multi_dly_audio_processor_a7d1bdb05b2dc811589057f34b8edc852}} 
+bool {\bfseries accepts\+Midi} () const override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a68043588a5ea0336ee754da728dadf0d}\label{class_multi_dly_audio_processor_a68043588a5ea0336ee754da728dadf0d}} 
+bool {\bfseries produces\+Midi} () const override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_ab260ad3d86c6ba732523cfd7d50a183c}\label{class_multi_dly_audio_processor_ab260ad3d86c6ba732523cfd7d50a183c}} 
+bool {\bfseries is\+Midi\+Effect} () const override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a768f054e27e6f20618dbb8aba09ff2ea}\label{class_multi_dly_audio_processor_a768f054e27e6f20618dbb8aba09ff2ea}} 
+double {\bfseries get\+Tail\+Length\+Seconds} () const override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a1c13668a15165772068487e5ec544210}\label{class_multi_dly_audio_processor_a1c13668a15165772068487e5ec544210}} 
+int {\bfseries get\+Num\+Programs} () override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a9bdd331f5fdf0f5c6b9931add16448f9}\label{class_multi_dly_audio_processor_a9bdd331f5fdf0f5c6b9931add16448f9}} 
+int {\bfseries get\+Current\+Program} () override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a6bb9d2671a9aa6def28ccef5961c33d7}\label{class_multi_dly_audio_processor_a6bb9d2671a9aa6def28ccef5961c33d7}} 
+void {\bfseries set\+Current\+Program} (int index) override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a0903801d8249b8c546bb0947c9291098}\label{class_multi_dly_audio_processor_a0903801d8249b8c546bb0947c9291098}} 
+const juce\+::\+String {\bfseries get\+Program\+Name} (int index) override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_aa0d877263b3eccc11582b0f602822559}\label{class_multi_dly_audio_processor_aa0d877263b3eccc11582b0f602822559}} 
+void {\bfseries change\+Program\+Name} (int index, const juce\+::\+String \&new\+Name) override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_a45ea7c84435b18a8bbcb4f7a977e2cd5}\label{class_multi_dly_audio_processor_a45ea7c84435b18a8bbcb4f7a977e2cd5}} 
+void {\bfseries get\+State\+Information} (juce\+::\+Memory\+Block \&dest\+Data) override
+\item 
+\mbox{\Hypertarget{class_multi_dly_audio_processor_aae81205308575c1820b51a53e3126a23}\label{class_multi_dly_audio_processor_aae81205308575c1820b51a53e3126a23}} 
+void {\bfseries set\+State\+Information} (const void $\ast$data, int size\+In\+Bytes) override
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/Plugin\+Processor.\+h\item 
+Source/Plugin\+Processor.\+cpp\end{DoxyCompactItemize}
