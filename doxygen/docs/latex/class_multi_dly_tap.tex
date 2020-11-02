@@ -1,0 +1,613 @@
+\hypertarget{class_multi_dly_tap}{}\doxysection{Multi\+Dly\+Tap$<$ T, C $>$ Class Template Reference}
+\label{class_multi_dly_tap}\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+
+
+Represents a single tap for the multi-\/tap delay.  
+
+
+
+
+{\ttfamily \#include $<$Multi\+Dly\+Tap.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3e}{Waveshaper\+Functions}} \{ \mbox{\hyperlink{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3ea61d7317f2d6bfadb62297c836daa60cd}{Sine}}, 
+\mbox{\hyperlink{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3ea1f46256dc64c747e9e91eddba69dac36}{Tanh}}, 
+\mbox{\hyperlink{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3ea0ad7807dcd67240618a800b5285495fb}{Signum}}
+ \}
+\begin{DoxyCompactList}\small\item\em Used to represent the waveshaper\textquotesingle{}s table function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multi_dly_tap_a9f19f1804e24f59b75e584f8aa24a017}{Multi\+Dly\+Tap}} (\mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}$<$ T, C $>$ \&\+\_\+engine, int \+\_\+max\+Write\+Index\+Offset)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multi_dly_tap_a5bc1b0331639ac50c6a78b92978b55f9}{Multi\+Dly\+Tap}} (const \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_multi_dly_tap_a363e4178caa4965459edd97511c84134}{Multi\+Dly\+Tap}} (\mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$ \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_a758e6d9277cd81cdd903085d7aff8f89}\label{class_multi_dly_tap_a758e6d9277cd81cdd903085d7aff8f89}} 
+\mbox{\hyperlink{class_multi_dly_tap_a758e6d9277cd81cdd903085d7aff8f89}{$\sim$\+Multi\+Dly\+Tap}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a206db660e3384a24ea24e9bf284f1710}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the tap to default values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a62a5edc4391e8e08d307a108627d100c}{set\+Time\+Ms}} (double new\+Time\+Ms)
+\item 
+void \mbox{\hyperlink{class_multi_dly_tap_ae76098443b3056e9eb745972de7b1118}{set\+Time\+Samples}} (int new\+Time\+Samples)
+\item 
+int \mbox{\hyperlink{class_multi_dly_tap_a3c342fd9ff454eef29afc52b87a25f32}{get\+Write\+Index\+Offset}} ()
+\item 
+Smoothed\+Value$<$ double, Value\+Smoothing\+Types\+::\+Linear $>$ $\ast$ \mbox{\hyperlink{class_multi_dly_tap_a900d6010868f19130707ffe986980517}{get\+Time\+Ms\+Smoothed\+Value}} ()
+\item 
+int \mbox{\hyperlink{class_multi_dly_tap_a8e70090b0b1da43e8da6833ddb4be87e}{get\+Max\+Write\+Index\+Offset}} () const
+\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a6fb37287fd8b0412abf88c9ad43fcc81}{set\+Feedback}} (double new\+Feedback)
+\item 
+double \mbox{\hyperlink{class_multi_dly_tap_a3b43786bab87b2188513e13016533890}{get\+Feedback}} () const
+\item 
+void \mbox{\hyperlink{class_multi_dly_tap_ac5c15bc544d7322a34ea4d9ca547bdfe}{set\+Mix}} (double new\+Mix)
+\item 
+double \mbox{\hyperlink{class_multi_dly_tap_a7f60d89c02c5637ad9c40c9f1046998d}{get\+Mix}} () const
+\item 
+void \mbox{\hyperlink{class_multi_dly_tap_ad32f2d759f08047904d2c83171dae682}{set\+Sample\+Rate}} (double new\+Sample\+Rate)
+\item 
+\mbox{\Hypertarget{class_multi_dly_tap_aedb83d93566627c40e024e19b32c9239}\label{class_multi_dly_tap_aedb83d93566627c40e024e19b32c9239}} 
+double \mbox{\hyperlink{class_multi_dly_tap_aedb83d93566627c40e024e19b32c9239}{get\+Sample\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Gets and returns the current sampling rate. \end{DoxyCompactList}\item 
+Value\+Tree \mbox{\hyperlink{class_multi_dly_tap_a55b5b93ae4fbcc625392a1275422ab31}{to\+VT}} ()
+\begin{DoxyCompactList}\small\item\em Creates and returns a {\ttfamily Value\+Tree} representing the state of the tap. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a19c22cbe4ed88ad4b24f96abcf18a10b}{from\+VT}} (Value\+Tree vt, \mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}$<$ T, C $>$ \&engine)
+\begin{DoxyCompactList}\small\item\em Reconstructs a tap from a Value\+Tree created by \mbox{\hyperlink{class_multi_dly_tap_a55b5b93ae4fbcc625392a1275422ab31}{to\+V\+T()}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a6585c0b514f06a84a704fbc4cc5b3937}{from\+V\+T\+Without\+Reset}} (Value\+Tree vt)
+\begin{DoxyCompactList}\small\item\em Reconstructs a tap from a {\ttfamily Value\+Tree} created by \mbox{\hyperlink{class_multi_dly_tap_a55b5b93ae4fbcc625392a1275422ab31}{to\+V\+T()}}, but doesn\textquotesingle{}t use a new engine, sampling rate, etc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a1efa8045c24d4099036bceb3a3aaf55a}{set\+W\+S\+In}} (bool ws\+In)
+\begin{DoxyCompactList}\small\item\em Sets whether the waveshaper is enabled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_a77fb695a642e18f129590481e1b130c0}\label{class_multi_dly_tap_a77fb695a642e18f129590481e1b130c0}} 
+bool \mbox{\hyperlink{class_multi_dly_tap_a77fb695a642e18f129590481e1b130c0}{get\+W\+S\+In}} ()
+\begin{DoxyCompactList}\small\item\em Gets a bool representing whether the waveshaper is enabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a138921c915dab44a9a54d60a3f6a9ebc}{set\+W\+S\+Fdbk}} (bool ws\+Fdbk)
+\begin{DoxyCompactList}\small\item\em Sets whether the waveshaper should be applied to the feedback of the delay. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_a13c4e20d5cbedbf451de33ae9b1f122f}\label{class_multi_dly_tap_a13c4e20d5cbedbf451de33ae9b1f122f}} 
+bool \mbox{\hyperlink{class_multi_dly_tap_a13c4e20d5cbedbf451de33ae9b1f122f}{get\+W\+S\+Fdbk}} ()
+\begin{DoxyCompactList}\small\item\em Gets whether the waveshaper should be applied to the feedback of the delay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_aa939805724568b172e336f87cc08b8e2}{set\+Waveshaper\+Type}} (\mbox{\hyperlink{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3e}{Waveshaper\+Functions}} function\+To\+Use)
+\begin{DoxyCompactList}\small\item\em Sets the function used by the waveshaper using one of the Waveshaper\+Functions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_af12da4ab1a18c7014a9f579721557bbb}\label{class_multi_dly_tap_af12da4ab1a18c7014a9f579721557bbb}} 
+\mbox{\hyperlink{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3e}{Waveshaper\+Functions}} \mbox{\hyperlink{class_multi_dly_tap_af12da4ab1a18c7014a9f579721557bbb}{get\+W\+S\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current waveshaping type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a816024e3814c5bc27e369262f33137b5}{set\+Waveshaper\+Post\+Gain}} (double new\+Post\+Gain)
+\begin{DoxyCompactList}\small\item\em Sets the gain applied to the signal after waveshaping. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_a2df071b3e890ff9850ce5e76bf55a1bc}\label{class_multi_dly_tap_a2df071b3e890ff9850ce5e76bf55a1bc}} 
+double \mbox{\hyperlink{class_multi_dly_tap_a2df071b3e890ff9850ce5e76bf55a1bc}{get\+W\+S\+Post\+Gain}} () const
+\begin{DoxyCompactList}\small\item\em Gets the post-\/processing gain value, in linear units. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_aa1ee03802f798843c48bd4407bfe0163}{set\+Waveshaper\+Pre\+Gain}} (double new\+Pre\+Gain)
+\begin{DoxyCompactList}\small\item\em Sets the gain applied to the signal before waveshaping. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_acffdd08751bca4058e3c278ef3c81f2e}\label{class_multi_dly_tap_acffdd08751bca4058e3c278ef3c81f2e}} 
+double \mbox{\hyperlink{class_multi_dly_tap_acffdd08751bca4058e3c278ef3c81f2e}{get\+W\+S\+Pre\+Gain}} () const
+\begin{DoxyCompactList}\small\item\em Gets the pre-\/processing gain value, in linear units. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a78afac3ff304594bb47ffd5d43314032}{set\+Comp\+Fdbk}} (bool comp\+Fdbk)
+\begin{DoxyCompactList}\small\item\em Sets whether the compressor should be applied to the feedback of the delay. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_a47ba2fe820a9e52da892984d92bb5ba9}\label{class_multi_dly_tap_a47ba2fe820a9e52da892984d92bb5ba9}} 
+bool \mbox{\hyperlink{class_multi_dly_tap_a47ba2fe820a9e52da892984d92bb5ba9}{get\+Comp\+Fdbk}} ()
+\begin{DoxyCompactList}\small\item\em Gets whether the compressor should be applied to the feedback of the delay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a74ec8d349d4f3f1b5aef96001655cf31}{set\+Comp\+In}} (bool comp\+In)
+\begin{DoxyCompactList}\small\item\em Sets whether the compressor should be enabled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_ac8fc9dd35e54d0dda4611de1dad54952}\label{class_multi_dly_tap_ac8fc9dd35e54d0dda4611de1dad54952}} 
+bool \mbox{\hyperlink{class_multi_dly_tap_ac8fc9dd35e54d0dda4611de1dad54952}{get\+Comp\+In}} ()
+\begin{DoxyCompactList}\small\item\em Gets whether the compressor is enabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a0bf1e541c48462514cfd5c4db541af67}{set\+Comp\+Ratio}} (T new\+Ratio)
+\begin{DoxyCompactList}\small\item\em Sets the compressor\textquotesingle{}s ratio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_ad85180b358218b1e7f85c6c3d98b7ba1}\label{class_multi_dly_tap_ad85180b358218b1e7f85c6c3d98b7ba1}} 
+T \mbox{\hyperlink{class_multi_dly_tap_ad85180b358218b1e7f85c6c3d98b7ba1}{get\+Comp\+Ratio}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current ratio of the compressor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a4fa80ce38cb2094fbbaf995e4f461770}{set\+Comp\+Thresh}} (T new\+Thresh)
+\begin{DoxyCompactList}\small\item\em Sets the compressor\textquotesingle{}s threshold in dB. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_afeb3defe04cbe6661b5fe605569b4dea}\label{class_multi_dly_tap_afeb3defe04cbe6661b5fe605569b4dea}} 
+T \mbox{\hyperlink{class_multi_dly_tap_afeb3defe04cbe6661b5fe605569b4dea}{get\+Comp\+Thresh}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current threshold of the compressor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_afd5012bf927d134f8f0d952205758f71}{set\+Comp\+Atk}} (T new\+Atk)
+\begin{DoxyCompactList}\small\item\em Sets the compressor\textquotesingle{}s attack in milliseconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_add1e0cadcb895024c501bb57bc478d68}\label{class_multi_dly_tap_add1e0cadcb895024c501bb57bc478d68}} 
+T \mbox{\hyperlink{class_multi_dly_tap_add1e0cadcb895024c501bb57bc478d68}{get\+Comp\+Atk}} ()
+\begin{DoxyCompactList}\small\item\em Gets the compressor\textquotesingle{}s current attack, in milliseconds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_a75a6f1e83e2c06e2713ea15e8244b6ee}{set\+Comp\+Rel}} (T new\+Rel)
+\begin{DoxyCompactList}\small\item\em Sets the compressor\textquotesingle{}s release in milliseconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_ab5e34a1decf1599c29fc22d8d5f09876}\label{class_multi_dly_tap_ab5e34a1decf1599c29fc22d8d5f09876}} 
+T \mbox{\hyperlink{class_multi_dly_tap_ab5e34a1decf1599c29fc22d8d5f09876}{get\+Comp\+Rel}} ()
+\begin{DoxyCompactList}\small\item\em Gets the compressor\textquotesingle{}s current release, in milliseconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_tap_a9f82df7311241c0085f7e52a17576ead}\label{class_multi_dly_tap_a9f82df7311241c0085f7e52a17576ead}} 
+bool \mbox{\hyperlink{class_multi_dly_tap_a9f82df7311241c0085f7e52a17576ead}{get\+Filt\+Pre}} ()
+\begin{DoxyCompactList}\small\item\em Gets whether the filter processing happens before or after waveshaping and compression. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_tap_ad062e30241bab1614785a77c929c5ecd}{set\+Filt\+Pre}} (bool filt\+Pre)
+\begin{DoxyCompactList}\small\item\em Sets whether the filter processing happens before or after waveshaping and compression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T, int C$>$\newline
+class Multi\+Dly\+Tap$<$ T, C $>$}
+
+Represents a single tap for the multi-\/tap delay. 
+
+Represents a single tap for the multi-\/tap delay, and owns pointers to the tap\textquotesingle{}s processors (comp, lpfilter, hpfilter, and waveshaper).
+
+While no processing is done directly by this class, some is done through it by calls to the aforementioned processors, so you should be careful to be threadsafe.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the to use for audio processing\\
+\hline
+{\em C} & the number of channels of audio used for input/output. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3e}\label{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3e}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!WaveshaperFunctions@{WaveshaperFunctions}}
+\index{WaveshaperFunctions@{WaveshaperFunctions}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{WaveshaperFunctions}{WaveshaperFunctions}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+enum \mbox{\hyperlink{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3e}{Multi\+Dly\+Tap\+::\+Waveshaper\+Functions}}}
+
+
+
+Used to represent the waveshaper\textquotesingle{}s table function. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sine@{Sine}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!Sine@{Sine}}}\mbox{\Hypertarget{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3ea61d7317f2d6bfadb62297c836daa60cd}\label{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3ea61d7317f2d6bfadb62297c836daa60cd}} 
+Sine&A simple sine shape, increases level for the middle of the range while decreasing level at the edge. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tanh@{Tanh}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!Tanh@{Tanh}}}\mbox{\Hypertarget{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3ea1f46256dc64c747e9e91eddba69dac36}\label{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3ea1f46256dc64c747e9e91eddba69dac36}} 
+Tanh&A common tanh shape, which sounds like a light overdrive. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Signum@{Signum}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!Signum@{Signum}}}\mbox{\Hypertarget{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3ea0ad7807dcd67240618a800b5285495fb}\label{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3ea0ad7807dcd67240618a800b5285495fb}} 
+Signum&The sign of the input -- i.\+e. the output is either -\/1. or 1. Very harsh distortion. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_multi_dly_tap_a9f19f1804e24f59b75e584f8aa24a017}\label{class_multi_dly_tap_a9f19f1804e24f59b75e584f8aa24a017}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!MultiDlyTap@{MultiDlyTap}}
+\index{MultiDlyTap@{MultiDlyTap}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{MultiDlyTap()}{MultiDlyTap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+\mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::\mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}$<$ T, C $>$ \&}]{\+\_\+engine,  }\item[{int}]{\+\_\+max\+Write\+Index\+Offset }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+The constructor that should be normally used. Taps need references to their engines and need to be able to calulate the maximum delay time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+engine} & This tap\textquotesingle{}s \mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}. \\
+\hline
+{\em \+\_\+max\+Write\+Index\+Offset} & The highest offset between the write pointer and the read pointer. Used to calculate maximum time and sanitize time input values if necessary. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a5bc1b0331639ac50c6a78b92978b55f9}\label{class_multi_dly_tap_a5bc1b0331639ac50c6a78b92978b55f9}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!MultiDlyTap@{MultiDlyTap}}
+\index{MultiDlyTap@{MultiDlyTap}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{MultiDlyTap()}{MultiDlyTap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+\mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::\mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}} to copy from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a363e4178caa4965459edd97511c84134}\label{class_multi_dly_tap_a363e4178caa4965459edd97511c84134}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!MultiDlyTap@{MultiDlyTap}}
+\index{MultiDlyTap@{MultiDlyTap}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{MultiDlyTap()}{MultiDlyTap()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+\mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::\mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$ \&\&}]{other }\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}} to move from \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_multi_dly_tap_a19c22cbe4ed88ad4b24f96abcf18a10b}\label{class_multi_dly_tap_a19c22cbe4ed88ad4b24f96abcf18a10b}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!fromVT@{fromVT}}
+\index{fromVT@{fromVT}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{fromVT()}{fromVT()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::from\+VT (\begin{DoxyParamCaption}\item[{Value\+Tree}]{vt,  }\item[{\mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}$<$ T, C $>$ \&}]{engine }\end{DoxyParamCaption})}
+
+
+
+Reconstructs a tap from a Value\+Tree created by \mbox{\hyperlink{class_multi_dly_tap_a55b5b93ae4fbcc625392a1275422ab31}{to\+V\+T()}}. 
+
+No {\ttfamily Value\+Tree} manually created or edited are guarenteed to work. This function only has well-\/defined behavior for a {\ttfamily Value\+Tree} created by \mbox{\hyperlink{class_multi_dly_tap_a55b5b93ae4fbcc625392a1275422ab31}{to\+V\+T()}}.
+
+This calls \mbox{\hyperlink{class_multi_dly_tap_a6585c0b514f06a84a704fbc4cc5b3937}{from\+V\+T\+Without\+Reset()}}, which keeps things like the engine and sample rate the same, while resetting other parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vt} & The {\ttfamily Value\+Tree}, created by \mbox{\hyperlink{class_multi_dly_tap_a55b5b93ae4fbcc625392a1275422ab31}{to\+V\+T()}}, to recreate the tap from. \\
+\hline
+{\em engine} & The engine that this tap belongs to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a6585c0b514f06a84a704fbc4cc5b3937}\label{class_multi_dly_tap_a6585c0b514f06a84a704fbc4cc5b3937}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!fromVTWithoutReset@{fromVTWithoutReset}}
+\index{fromVTWithoutReset@{fromVTWithoutReset}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{fromVTWithoutReset()}{fromVTWithoutReset()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::from\+V\+T\+Without\+Reset (\begin{DoxyParamCaption}\item[{Value\+Tree}]{vt }\end{DoxyParamCaption})}
+
+
+
+Reconstructs a tap from a {\ttfamily Value\+Tree} created by \mbox{\hyperlink{class_multi_dly_tap_a55b5b93ae4fbcc625392a1275422ab31}{to\+V\+T()}}, but doesn\textquotesingle{}t use a new engine, sampling rate, etc. 
+
+As with \mbox{\hyperlink{class_multi_dly_tap_a19c22cbe4ed88ad4b24f96abcf18a10b}{from\+V\+T()}}, no {\ttfamily Value\+Tree} manually created or edited are guarenteed to work. This function only has well-\/defined behavior for a {\ttfamily Value\+Tree} created by \mbox{\hyperlink{class_multi_dly_tap_a55b5b93ae4fbcc625392a1275422ab31}{to\+V\+T()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vt} & The {\ttfamily Value\+Tree}, created by \mbox{\hyperlink{class_multi_dly_tap_a55b5b93ae4fbcc625392a1275422ab31}{to\+V\+T()}}, to recreate the tap from. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a3b43786bab87b2188513e13016533890}\label{class_multi_dly_tap_a3b43786bab87b2188513e13016533890}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!getFeedback@{getFeedback}}
+\index{getFeedback@{getFeedback}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{getFeedback()}{getFeedback()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+double \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::get\+Feedback}
+
+Gets the feedback for the tap. \mbox{\Hypertarget{class_multi_dly_tap_a8e70090b0b1da43e8da6833ddb4be87e}\label{class_multi_dly_tap_a8e70090b0b1da43e8da6833ddb4be87e}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!getMaxWriteIndexOffset@{getMaxWriteIndexOffset}}
+\index{getMaxWriteIndexOffset@{getMaxWriteIndexOffset}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{getMaxWriteIndexOffset()}{getMaxWriteIndexOffset()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+int \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::get\+Max\+Write\+Index\+Offset}
+
+Gets the highest write index offset value, which is a consequence of the longest possible delay (and the length of the delay buffer owned by the engine. \mbox{\Hypertarget{class_multi_dly_tap_a7f60d89c02c5637ad9c40c9f1046998d}\label{class_multi_dly_tap_a7f60d89c02c5637ad9c40c9f1046998d}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!getMix@{getMix}}
+\index{getMix@{getMix}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{getMix()}{getMix()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+double \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::get\+Mix}
+
+Gets the mix for the tap. \mbox{\Hypertarget{class_multi_dly_tap_a900d6010868f19130707ffe986980517}\label{class_multi_dly_tap_a900d6010868f19130707ffe986980517}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!getTimeMsSmoothedValue@{getTimeMsSmoothedValue}}
+\index{getTimeMsSmoothedValue@{getTimeMsSmoothedValue}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{getTimeMsSmoothedValue()}{getTimeMsSmoothedValue()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+Smoothed\+Value$<$ double, Value\+Smoothing\+Types\+::\+Linear $>$ $\ast$ \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::get\+Time\+Ms\+Smoothed\+Value}
+
+Gets a pointer to the Smoothed\+Value for the \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}\textquotesingle{}s time which is likely never necessary. \mbox{\Hypertarget{class_multi_dly_tap_a3c342fd9ff454eef29afc52b87a25f32}\label{class_multi_dly_tap_a3c342fd9ff454eef29afc52b87a25f32}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!getWriteIndexOffset@{getWriteIndexOffset}}
+\index{getWriteIndexOffset@{getWriteIndexOffset}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{getWriteIndexOffset()}{getWriteIndexOffset()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+int \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::get\+Write\+Index\+Offset}
+
+Gets the number of samples behind the write pointer to read a sample. This value represents the time, and calls the time\+Ms Smoothed\+Value. \mbox{\Hypertarget{class_multi_dly_tap_a206db660e3384a24ea24e9bf284f1710}\label{class_multi_dly_tap_a206db660e3384a24ea24e9bf284f1710}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!init@{init}}
+\index{init@{init}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::init}
+
+
+
+Initializes the tap to default values. 
+
+Called by all constructors, but can be used externally to return the state to default.
+
+Note\+: this specifies that the two filters and compressor should be prepared to handle {\itshape  C $\ast$ 2 } channels, because the feedback signal might need to be processed separately from the regular signal. \mbox{\Hypertarget{class_multi_dly_tap_afd5012bf927d134f8f0d952205758f71}\label{class_multi_dly_tap_afd5012bf927d134f8f0d952205758f71}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setCompAtk@{setCompAtk}}
+\index{setCompAtk@{setCompAtk}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setCompAtk()}{setCompAtk()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Comp\+Atk (\begin{DoxyParamCaption}\item[{T}]{new\+Atk }\end{DoxyParamCaption})}
+
+
+
+Sets the compressor\textquotesingle{}s attack in milliseconds. 
+
+This is type T because the underlying compressor uses the same type for audio processing and parameter setting.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Atk} & The new attack time for the compressor, in milliseconds. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a78afac3ff304594bb47ffd5d43314032}\label{class_multi_dly_tap_a78afac3ff304594bb47ffd5d43314032}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setCompFdbk@{setCompFdbk}}
+\index{setCompFdbk@{setCompFdbk}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setCompFdbk()}{setCompFdbk()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Comp\+Fdbk (\begin{DoxyParamCaption}\item[{bool}]{comp\+Fdbk }\end{DoxyParamCaption})}
+
+
+
+Sets whether the compressor should be applied to the feedback of the delay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comp\+Fdbk} & The new value for the compressor\textquotesingle{}s feedback. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a74ec8d349d4f3f1b5aef96001655cf31}\label{class_multi_dly_tap_a74ec8d349d4f3f1b5aef96001655cf31}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setCompIn@{setCompIn}}
+\index{setCompIn@{setCompIn}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setCompIn()}{setCompIn()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Comp\+In (\begin{DoxyParamCaption}\item[{bool}]{comp\+In }\end{DoxyParamCaption})}
+
+
+
+Sets whether the compressor should be enabled. 
+
+This is type T because the underlying compressor uses the same type for audio processing and parameter setting.
+
+
+\begin{DoxyParams}{Parameters}
+{\em comp\+In} & The new value for whether the compressor should be enabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a0bf1e541c48462514cfd5c4db541af67}\label{class_multi_dly_tap_a0bf1e541c48462514cfd5c4db541af67}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setCompRatio@{setCompRatio}}
+\index{setCompRatio@{setCompRatio}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setCompRatio()}{setCompRatio()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Comp\+Ratio (\begin{DoxyParamCaption}\item[{T}]{new\+Ratio }\end{DoxyParamCaption})}
+
+
+
+Sets the compressor\textquotesingle{}s ratio. 
+
+This is type T because the underlying compressor uses the same type for audio processing and parameter setting.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Ratio} & The new ratio for the compressor. Must be $>$= 1.\+0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a75a6f1e83e2c06e2713ea15e8244b6ee}\label{class_multi_dly_tap_a75a6f1e83e2c06e2713ea15e8244b6ee}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setCompRel@{setCompRel}}
+\index{setCompRel@{setCompRel}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setCompRel()}{setCompRel()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Comp\+Rel (\begin{DoxyParamCaption}\item[{T}]{new\+Rel }\end{DoxyParamCaption})}
+
+
+
+Sets the compressor\textquotesingle{}s release in milliseconds. 
+
+This is type T because the underlying compressor uses the same type for audio processing and parameter setting.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Rel} & The new release time for the compressor, in milliseconds. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a4fa80ce38cb2094fbbaf995e4f461770}\label{class_multi_dly_tap_a4fa80ce38cb2094fbbaf995e4f461770}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setCompThresh@{setCompThresh}}
+\index{setCompThresh@{setCompThresh}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setCompThresh()}{setCompThresh()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Comp\+Thresh (\begin{DoxyParamCaption}\item[{T}]{new\+Thresh }\end{DoxyParamCaption})}
+
+
+
+Sets the compressor\textquotesingle{}s threshold in dB. 
+
+This is type T because the underlying compressor uses the same type for audio processing and parameter setting.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Thresh} & The new threshold for the compressor, in dB. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a6fb37287fd8b0412abf88c9ad43fcc81}\label{class_multi_dly_tap_a6fb37287fd8b0412abf88c9ad43fcc81}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setFeedback@{setFeedback}}
+\index{setFeedback@{setFeedback}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setFeedback()}{setFeedback()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Feedback (\begin{DoxyParamCaption}\item[{double}]{new\+Feedback }\end{DoxyParamCaption})}
+
+Sets the feedback for the tap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Feedback} & The new feedback for the tap. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_ad062e30241bab1614785a77c929c5ecd}\label{class_multi_dly_tap_ad062e30241bab1614785a77c929c5ecd}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setFiltPre@{setFiltPre}}
+\index{setFiltPre@{setFiltPre}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setFiltPre()}{setFiltPre()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Filt\+Pre (\begin{DoxyParamCaption}\item[{bool}]{filt\+Pre }\end{DoxyParamCaption})}
+
+
+
+Sets whether the filter processing happens before or after waveshaping and compression. 
+
+This value should be queried once per signal pass (either sample or block), because otherwise one risks a change to this value occurring between the pre-\/filter and the post-\/filter. A correctly implemented \mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}} must achieve this.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filt\+Pre} & The new value for when filter processing should happen \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_ac5c15bc544d7322a34ea4d9ca547bdfe}\label{class_multi_dly_tap_ac5c15bc544d7322a34ea4d9ca547bdfe}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setMix@{setMix}}
+\index{setMix@{setMix}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setMix()}{setMix()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Mix (\begin{DoxyParamCaption}\item[{double}]{new\+Mix }\end{DoxyParamCaption})}
+
+Sets the mix for the tap, where 0.\+0 is no delay, and 1.\+0 is only delay.
+
+In the engine, the delayed signal should be multiplied by mix, whereas the dry signal should be multiplied by {\itshape  (1.\+0 -\/ mix) }.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Mix} & The new mix value for the tap. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_ad32f2d759f08047904d2c83171dae682}\label{class_multi_dly_tap_ad32f2d759f08047904d2c83171dae682}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setSampleRate@{setSampleRate}}
+\index{setSampleRate@{setSampleRate}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setSampleRate()}{setSampleRate()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Sample\+Rate (\begin{DoxyParamCaption}\item[{double}]{new\+Sample\+Rate }\end{DoxyParamCaption})}
+
+Sets the sample rate of the processor. {\bfseries{ If you don\textquotesingle{}t call \mbox{\hyperlink{class_multi_dly_tap_a206db660e3384a24ea24e9bf284f1710}{Multi\+Dly\+Tap$<$\+T, C$>$\+::init()}} after this, behavior is undefined. Behavior is also undefined if the sample rate of the processor differs from the sample rate of its engine. }}
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Sample\+Rate} & The new sample rate for the tap. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a62a5edc4391e8e08d307a108627d100c}\label{class_multi_dly_tap_a62a5edc4391e8e08d307a108627d100c}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setTimeMs@{setTimeMs}}
+\index{setTimeMs@{setTimeMs}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setTimeMs()}{setTimeMs()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Time\+Ms (\begin{DoxyParamCaption}\item[{double}]{new\+Time\+Ms }\end{DoxyParamCaption})}
+
+Sets the time in milliseconds. This uses the internal Smoothed\+Value time\+Ms, which ensures that changes are ramped and don\textquotesingle{}t cause audio glitches.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Time\+Ms} & The new delay length for the tap, in milliseconds. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_ae76098443b3056e9eb745972de7b1118}\label{class_multi_dly_tap_ae76098443b3056e9eb745972de7b1118}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setTimeSamples@{setTimeSamples}}
+\index{setTimeSamples@{setTimeSamples}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setTimeSamples()}{setTimeSamples()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Time\+Samples (\begin{DoxyParamCaption}\item[{int}]{new\+Time\+Samples }\end{DoxyParamCaption})}
+
+Sets the time in samples, relative to the tap\textquotesingle{}s sampling rate sr. This calls \mbox{\hyperlink{class_multi_dly_tap_a62a5edc4391e8e08d307a108627d100c}{set\+Time\+Ms()}} because the smoothed value for time is stored in milliseconds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Time\+Samples} & The new delay length for the tap, in samples relative to sr. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a816024e3814c5bc27e369262f33137b5}\label{class_multi_dly_tap_a816024e3814c5bc27e369262f33137b5}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setWaveshaperPostGain@{setWaveshaperPostGain}}
+\index{setWaveshaperPostGain@{setWaveshaperPostGain}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setWaveshaperPostGain()}{setWaveshaperPostGain()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Waveshaper\+Post\+Gain (\begin{DoxyParamCaption}\item[{double}]{new\+Post\+Gain }\end{DoxyParamCaption})}
+
+
+
+Sets the gain applied to the signal after waveshaping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Post\+Gain} & The new post-\/processing gain value in linear value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_aa1ee03802f798843c48bd4407bfe0163}\label{class_multi_dly_tap_aa1ee03802f798843c48bd4407bfe0163}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setWaveshaperPreGain@{setWaveshaperPreGain}}
+\index{setWaveshaperPreGain@{setWaveshaperPreGain}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setWaveshaperPreGain()}{setWaveshaperPreGain()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Waveshaper\+Pre\+Gain (\begin{DoxyParamCaption}\item[{double}]{new\+Pre\+Gain }\end{DoxyParamCaption})}
+
+
+
+Sets the gain applied to the signal before waveshaping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Pre\+Gain} & The new pre-\/processing gain value in linear value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_aa939805724568b172e336f87cc08b8e2}\label{class_multi_dly_tap_aa939805724568b172e336f87cc08b8e2}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setWaveshaperType@{setWaveshaperType}}
+\index{setWaveshaperType@{setWaveshaperType}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setWaveshaperType()}{setWaveshaperType()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+Waveshaper\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_multi_dly_tap_a69def7a4b92e3ed65962e21745c74c3e}{Waveshaper\+Functions}}}]{function\+To\+Use }\end{DoxyParamCaption})}
+
+
+
+Sets the function used by the waveshaper using one of the Waveshaper\+Functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\+To\+Use} & The function to use for waveshaping. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a138921c915dab44a9a54d60a3f6a9ebc}\label{class_multi_dly_tap_a138921c915dab44a9a54d60a3f6a9ebc}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setWSFdbk@{setWSFdbk}}
+\index{setWSFdbk@{setWSFdbk}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setWSFdbk()}{setWSFdbk()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+W\+S\+Fdbk (\begin{DoxyParamCaption}\item[{bool}]{ws\+Fdbk }\end{DoxyParamCaption})}
+
+
+
+Sets whether the waveshaper should be applied to the feedback of the delay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ws\+Fdbk} & The new value for whether the waveshaper should be enabled in the feedback loop. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a1efa8045c24d4099036bceb3a3aaf55a}\label{class_multi_dly_tap_a1efa8045c24d4099036bceb3a3aaf55a}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!setWSIn@{setWSIn}}
+\index{setWSIn@{setWSIn}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{setWSIn()}{setWSIn()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+void \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::set\+W\+S\+In (\begin{DoxyParamCaption}\item[{bool}]{ws\+In }\end{DoxyParamCaption})}
+
+
+
+Sets whether the waveshaper is enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ws\+In} & The new value for whether the waveshaper should be enabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_tap_a55b5b93ae4fbcc625392a1275422ab31}\label{class_multi_dly_tap_a55b5b93ae4fbcc625392a1275422ab31}} 
+\index{MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}!toVT@{toVT}}
+\index{toVT@{toVT}!MultiDlyTap$<$ T, C $>$@{MultiDlyTap$<$ T, C $>$}}
+\doxysubsubsection{\texorpdfstring{toVT()}{toVT()}}
+{\footnotesize\ttfamily template$<$class T , int C$>$ \\
+Value\+Tree \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, C $>$\+::to\+VT}
+
+
+
+Creates and returns a {\ttfamily Value\+Tree} representing the state of the tap. 
+
+This can be used for saving, copying, etc. It pulls values from all necessary parameters atomically. The format of the output {\ttfamily Value\+Tree} is specified in this function\textquotesingle{}s definition, but you {\bfseries{ should never manually edit the {\ttfamily Value\+Tree} }}
+
+\begin{DoxyReturn}{Returns}
+The {\ttfamily Value\+Tree} which represents the current tap. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/Multi\+Dly\+Tap.\+h\item 
+Source/Multi\+Dly\+Tap.\+cpp\end{DoxyCompactItemize}

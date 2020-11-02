@@ -1,0 +1,202 @@
+\hypertarget{class_multi_dly_engine}{}\doxysection{Multi\+Dly\+Engine$<$ T, Ch $>$ Class Template Reference}
+\label{class_multi_dly_engine}\index{MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}}
+
+
+The engine that runs delay processing, owns Multi\+Dly\+Taps, and represents the entire audio backend of the plugin.  
+
+
+
+
+{\ttfamily \#include $<$multi\+Dly\+Engine.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_multi_dly_engine_a631b8a97a6a6630ff4cdb647aae74727}{Multi\+Dly\+Engine}} (double sample\+Rate, int block\+Size)
+\begin{DoxyCompactList}\small\item\em The only valid constructor for \mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_engine_a614617a608693f9b933ee7ab0e7bc5ba}\label{class_multi_dly_engine_a614617a608693f9b933ee7ab0e7bc5ba}} 
+\mbox{\hyperlink{class_multi_dly_engine_a614617a608693f9b933ee7ab0e7bc5ba}{$\sim$\+Multi\+Dly\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_engine_aec370aba848bd2b52ea90c14b12cb9e9}\label{class_multi_dly_engine_aec370aba848bd2b52ea90c14b12cb9e9}} 
+{\bfseries Multi\+Dly\+Engine} (\mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}} \&other)=delete
+\item 
+\mbox{\Hypertarget{class_multi_dly_engine_a2d0779d9405eb5459017f4ee5f01f6a1}\label{class_multi_dly_engine_a2d0779d9405eb5459017f4ee5f01f6a1}} 
+{\bfseries Multi\+Dly\+Engine} (\mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}} \&\&other)=delete
+\item 
+void \mbox{\hyperlink{class_multi_dly_engine_ad13fd118b07ed4918b25e4bc5260693d}{prepare\+To\+Play}} (double sr, int block\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Called before the first playback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_engine_aa8212cf324fb42a83c05e9f4ab6706e2}{process\+Samples}} (Audio\+Buffer$<$ T $>$ \&samples)
+\begin{DoxyCompactList}\small\item\em Main callback for processing samples. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_multi_dly_engine_a3811c535bbe7d71c99bf4fbd80f094a8}{add\+Delay\+Tap}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, Ch $>$$>$ tap\+To\+Add, unsigned int delay\+Buffer\+Size=0)
+\item 
+\mbox{\Hypertarget{class_multi_dly_engine_a6f3c651482a214b277d7a8aa6f1d9b25}\label{class_multi_dly_engine_a6f3c651482a214b277d7a8aa6f1d9b25}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, Ch $>$ $>$ {\bfseries create\+And\+Add\+Delay\+Tap} (Value\+Tree delay\+Tap\+Parameters\+VT, unsigned int delay\+Buffer\+Size=0)
+\item 
+void \mbox{\hyperlink{class_multi_dly_engine_a543d0a33dcf7bebf0f6b92df7a3567b7}{set\+Sample\+Rate}} (double new\+Sample\+Rate)
+\begin{DoxyCompactList}\small\item\em Sets the sample rate for the engine and all its taps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_engine_a1385d5235c808787955e3f5316ff742c}{set\+Block\+Size}} (int new\+Block\+Size)
+\begin{DoxyCompactList}\small\item\em Sets the block size for processing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_multi_dly_engine_a29a11429f51bafc17956aa347a0676f3}\label{class_multi_dly_engine_a29a11429f51bafc17956aa347a0676f3}} 
+double \mbox{\hyperlink{class_multi_dly_engine_a29a11429f51bafc17956aa347a0676f3}{get\+Sample\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current sample rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_multi_dly_engine_a34e953fd8004c67f34177c66157cfecc}{write\+Incoming\+Audio}} (juce\+::\+Audio\+Buffer$<$ float $>$ \&data)
+\begin{DoxyCompactList}\small\item\em writes new audio from host to circular buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_multi_dly_engine_a727176a2919356e2a3a2ecc2c9079c8a}\label{class_multi_dly_engine_a727176a2919356e2a3a2ecc2c9079c8a}} 
+double {\bfseries smoothing\+Ramp\+Length} = 0.\+1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T, int Ch$>$\newline
+class Multi\+Dly\+Engine$<$ T, Ch $>$}
+
+The engine that runs delay processing, owns Multi\+Dly\+Taps, and represents the entire audio backend of the plugin. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type to perform audio processing with \\
+\hline
+{\em Ch} & The number of channels to perform audio processing on (both input and output channels) \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_multi_dly_engine_a631b8a97a6a6630ff4cdb647aae74727}\label{class_multi_dly_engine_a631b8a97a6a6630ff4cdb647aae74727}} 
+\index{MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}!MultiDlyEngine@{MultiDlyEngine}}
+\index{MultiDlyEngine@{MultiDlyEngine}!MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}}
+\doxysubsubsection{\texorpdfstring{MultiDlyEngine()}{MultiDlyEngine()}}
+{\footnotesize\ttfamily template$<$class T , int Ch$>$ \\
+\mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}$<$ T, Ch $>$\+::\mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}} (\begin{DoxyParamCaption}\item[{double}]{sample\+Rate,  }\item[{int}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+The only valid constructor for \mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+Rate} & The sampling rate for the engine in Hz. \\
+\hline
+{\em block\+Size} & The number of audio samples to expect per block. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_multi_dly_engine_a3811c535bbe7d71c99bf4fbd80f094a8}\label{class_multi_dly_engine_a3811c535bbe7d71c99bf4fbd80f094a8}} 
+\index{MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}!addDelayTap@{addDelayTap}}
+\index{addDelayTap@{addDelayTap}!MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}}
+\doxysubsubsection{\texorpdfstring{addDelayTap()}{addDelayTap()}}
+{\footnotesize\ttfamily template$<$class T , int Ch$>$ \\
+bool \mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}$<$ T, Ch $>$\+::add\+Delay\+Tap (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}}$<$ T, Ch $>$$>$}]{tap\+To\+Add,  }\item[{unsigned int}]{delay\+Buffer\+Size = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Attempts to add a \mbox{\hyperlink{class_multi_dly_tap}{Multi\+Dly\+Tap}} to the engine, returning true if the tap is successfully added and false if it is unsuccessful.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tap\+To\+Add} & The shared\+\_\+ptr to the tap that should be added. It is not necessary for the owner to continue to own their copy of tap\+To\+Add after this callback completes. \\
+\hline
+{\em delay\+Buffer\+Size} & The size, in samples, of the delay buffer. This is currently defined internally to the engine, so callers may leave it as zero so that the engine can fill in the correct value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_engine_ad13fd118b07ed4918b25e4bc5260693d}\label{class_multi_dly_engine_ad13fd118b07ed4918b25e4bc5260693d}} 
+\index{MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}!prepareToPlay@{prepareToPlay}}
+\index{prepareToPlay@{prepareToPlay}!MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}}
+\doxysubsubsection{\texorpdfstring{prepareToPlay()}{prepareToPlay()}}
+{\footnotesize\ttfamily template$<$class T , int Ch$>$ \\
+void \mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}$<$ T, Ch $>$\+::prepare\+To\+Play (\begin{DoxyParamCaption}\item[{double}]{sr,  }\item[{int}]{block\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Called before the first playback. 
+
+Called before playback in order to set Sampling Rate and Block Size. This is not necessarily called before each playback, but is always called before the first callback to \mbox{\hyperlink{class_multi_dly_engine_aa8212cf324fb42a83c05e9f4ab6706e2}{process\+Samples()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sr} & The sampling rate to play back at, in Hz. \\
+\hline
+{\em block\+\_\+size} & The expected block size, in samples. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_engine_aa8212cf324fb42a83c05e9f4ab6706e2}\label{class_multi_dly_engine_aa8212cf324fb42a83c05e9f4ab6706e2}} 
+\index{MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}!processSamples@{processSamples}}
+\index{processSamples@{processSamples}!MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}}
+\doxysubsubsection{\texorpdfstring{processSamples()}{processSamples()}}
+{\footnotesize\ttfamily template$<$class T , int Ch$>$ \\
+void \mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}$<$ T, Ch $>$\+::process\+Samples (\begin{DoxyParamCaption}\item[{Audio\+Buffer$<$ T $>$ \&}]{samples }\end{DoxyParamCaption})}
+
+
+
+Main callback for processing samples. 
+
+Replaces input signals with output signals. 
+\begin{DoxyParams}{Parameters}
+{\em samples} & The buffer to process inputs from/fill with correct output samples. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_engine_a1385d5235c808787955e3f5316ff742c}\label{class_multi_dly_engine_a1385d5235c808787955e3f5316ff742c}} 
+\index{MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}!setBlockSize@{setBlockSize}}
+\index{setBlockSize@{setBlockSize}!MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}}
+\doxysubsubsection{\texorpdfstring{setBlockSize()}{setBlockSize()}}
+{\footnotesize\ttfamily template$<$class T , int Ch$>$ \\
+void \mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}$<$ T, Ch $>$\+::set\+Block\+Size (\begin{DoxyParamCaption}\item[{int}]{new\+Block\+Size }\end{DoxyParamCaption})}
+
+
+
+Sets the block size for processing. 
+
+At this point the taps don\textquotesingle{}t actually care about the block size, but at some point, sub-\/block processing should be implemented here so that the effects in each tap don\textquotesingle{}t have to process single samples. This is probably more efficient and certainly allows for more chance of S\+I\+MD optimization, from J\+U\+CE, the compiler, or us.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Block\+Size} & The new block size for processing. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_engine_a543d0a33dcf7bebf0f6b92df7a3567b7}\label{class_multi_dly_engine_a543d0a33dcf7bebf0f6b92df7a3567b7}} 
+\index{MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}!setSampleRate@{setSampleRate}}
+\index{setSampleRate@{setSampleRate}!MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}}
+\doxysubsubsection{\texorpdfstring{setSampleRate()}{setSampleRate()}}
+{\footnotesize\ttfamily template$<$class T , int Ch$>$ \\
+void \mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}$<$ T, Ch $>$\+::set\+Sample\+Rate (\begin{DoxyParamCaption}\item[{double}]{new\+Sample\+Rate }\end{DoxyParamCaption})}
+
+
+
+Sets the sample rate for the engine and all its taps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Sample\+Rate} & The new sampling rate in Hz. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_multi_dly_engine_a34e953fd8004c67f34177c66157cfecc}\label{class_multi_dly_engine_a34e953fd8004c67f34177c66157cfecc}} 
+\index{MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}!writeIncomingAudio@{writeIncomingAudio}}
+\index{writeIncomingAudio@{writeIncomingAudio}!MultiDlyEngine$<$ T, Ch $>$@{MultiDlyEngine$<$ T, Ch $>$}}
+\doxysubsubsection{\texorpdfstring{writeIncomingAudio()}{writeIncomingAudio()}}
+{\footnotesize\ttfamily template$<$class T , int Ch$>$ \\
+void \mbox{\hyperlink{class_multi_dly_engine}{Multi\+Dly\+Engine}}$<$ T, Ch $>$\+::write\+Incoming\+Audio (\begin{DoxyParamCaption}\item[{juce\+::\+Audio\+Buffer$<$ float $>$ \&}]{data }\end{DoxyParamCaption})}
+
+
+
+writes new audio from host to circular buffer 
+
+Writes new audio data to the circular buffer for delay processing.
+
+This is currently public, but it should probably only be used internally. Until I know for sure there is no good reason to do this from the outside, I\textquotesingle{}ll leave it public.
+
+This function doesn\textquotesingle{}t actually iterate the write index, because offsets for delay length need to be calculated from the write index\textquotesingle{}s location relative to the current sample, not the sample {\ttfamily data.\+length()} ahead. The write index is iterated by \mbox{\hyperlink{class_multi_dly_engine_aa8212cf324fb42a83c05e9f4ab6706e2}{process\+Samples()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to add to the delay buffer. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/multi\+Dly\+Engine.\+h\item 
+Source/multi\+Dly\+Engine.\+cpp\end{DoxyCompactItemize}
