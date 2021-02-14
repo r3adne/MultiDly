@@ -86,6 +86,9 @@
 cmake-build-*/
 cmake-build/
 
+
+
+
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
 
@@ -116,6 +119,8 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
+
+.idea/
 ### CLion Patch ###
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 
