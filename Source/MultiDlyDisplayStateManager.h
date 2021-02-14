@@ -27,7 +27,7 @@ public:
     ~MultiDlyDisplayStateManager();
 
     bool AddNewTap();
-
+    
 
 
 private:

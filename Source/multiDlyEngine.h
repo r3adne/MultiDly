@@ -12,7 +12,7 @@
 
 #define MAX_NUM_DLY_TAPS 32
 #define MAX_DELAY_TIME_SECONDS 20
-//#define INTERNAL_BLOCK_SIZE 32 // not needed currently, but might be if internal sub-block processing is necessary (to account for the smoothed value
+//#define INTERNAL_BLOCK_SIZE 32 // not needed currently, but might be if internal sub-block processing is necessary (to account for the smoothed value)
 #define DELAY_BUFFER_LENGTH (MAX_DELAY_TIME_SECONDS * 48000)
 
 
@@ -147,6 +147,12 @@ public:
      */
     void removeTap(int index);
 
+    /**
+     @brief removes a tap stored by a given shared_ptr.
+
+     Note that this is not as efficient as removing taps by index, as we must search for the provided tap within the array. Currently this is just done linearly because the maximum number of taps is quite low, but could be improved upon eventually because the tap array is kept sorted. 
+     */
+    void removeTap(std::shared_ptr<MultiDlyTap<T, Ch>> tap);
 
     /**
      @brief Gets a shared_ptr to the tap at index.

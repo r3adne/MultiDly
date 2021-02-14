@@ -80,7 +80,7 @@ public:
     void sliderValueChanged(Slider*) override;
 
 private:
-    MultiDlyAudioProcessor& _p;;
+    MultiDlyAudioProcessor& _p;
 
     Slider LPFFrequencySlider, HPFFrequencySlider, LPFOrderIncDec, HPFOrderIncDec;
     Label LPFFrequencyLabel, HPFFrequencyLabel, LPFOrderLabel, HPFOrderLabel;

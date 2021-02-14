@@ -199,3 +199,31 @@ double MultiDlyEngine<T, Ch>::getSampleRate() const
 {
     return sr;
 }
+
+
+
+
+template<class T, int Ch>
+void MultiDlyEngine<T, Ch>::removeTap(std::shared_ptr<MultiDlyTap<T, Ch>> tap)
+{
+    int i = 0;
+    for (std::shared_ptr<MultiDlyTap<T, Ch>> t : taps)
+    {
+        if (t == tap) { removeTap(i); }
+        ++i;
+    }
+}
+
+template<class T, int Ch>
+void MultiDlyEngine<T, Ch>::removeTap(int index)
+{
+    taps[index] = nullptr;
+}
+
+
+
+template<class T, int Ch>
+std::shared_ptr<MultiDlyTap<T, Ch>> MultiDlyEngine<T, Ch>::getTap(int index)
+{
+    return taps[index];
+}

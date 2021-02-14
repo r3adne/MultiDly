@@ -12,7 +12,7 @@
 #include "TapEditorComponent.h"
 
 //==============================================================================
-TapEditorComponent::TapEditorComponent()
+TapEditorComponent::TapEditorComponent(MultiDlyAudioProcessor& p) : _p(p)
 {
     // In your constructor, you should add any child components, and
     // initialise any special settings that your component needs.
@@ -47,5 +47,65 @@ void TapEditorComponent::resized()
 {
     // This method is where you should set the bounds of any child
     // components that your component contains..
+
+}
+
+
+void TapEditorComponent::mouseDown(const MouseEvent& m)
+{
+    const GenericScopedLock<SpinLock> sl ((edL));
+
+
+
+
+}
+
+void TapEditorComponent::mouseUp(const MouseEvent& m)
+{
+    if (! m.mouseWasDraggedSinceMouseDown())
+    {
+        for (DlyTapComponent a : taps)
+        {
+            // do hit test, change focus if necessary
+
+            if (a.contains(m.getPosition()))
+            {
+                focusedTap = &a;
+            }
+        }
+    }
+
+}
+
+void TapEditorComponent::mouseDrag(const MouseEvent& m)
+{
+
+}
+
+
+void TapEditorComponent::addTap(DlyTapComponent t, bool shouldGainFocus, bool shouldAlsoAddToEngine)
+{
+
+    if (shouldAlsoAddToEngine && _p.getEngine() != nullptr)
+    {
+//        _p.getEngine()
+    }
+
+
+
+    if (shouldGainFocus)
+    {
+
+    }
+
+}
+
+void TapEditorComponent::removeTap(DlyTapComponent* pt, bool shouldAlsoRemoveFromEngine)
+{
+    
+}
+
+void TapEditorComponent::setFocusedTap(DlyTapComponent* t)
+{
 
 }

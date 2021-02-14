@@ -8,6 +8,8 @@
 
 #pragma once
 
+#define PROCESSING_TYPE float
+
 #include <JuceHeader.h>
 #include "multiDlyEngine.h"
 #include "MultiDlyDisplayStateManager.h"
@@ -57,11 +59,14 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
+    std::shared_ptr<EngineBase> getEngine() { return Engine; }
+
+    std::atomic<int> EngineChannels;
 private:
 
 
 //    MultiDlyDisplayStateManager<double, 2> DisplayBackingClass;
-//    MultiDlyEngine<double, 2> Engine;
+//    MultiDlyEngine<double, 2> Engine;/
     std::shared_ptr<EngineBase> Engine;
     std::shared_ptr<MultiDlyDisplayStateManagerBase> DisplayBackingClass;
 

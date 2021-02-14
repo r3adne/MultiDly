@@ -99,7 +99,18 @@ void MultiDlyAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlo
     auto ins = getTotalNumInputChannels();
     auto outs = getTotalNumOutputChannels();
 
-//    if
+    // a change in number of channels has occurred, we need to recreate the engine
+    if (EngineChannels.load() != std::max(ins, outs))
+    {
+        const int a = std::max(ins, outs);
+//        std::shared_ptr<MultiDlyEngine<PROCESSING_TYPE, a>> _engine = std::make_shared<MultiDlyEngine<PROCESSING_TYPE, a>>(sampleRate, samplesPerBlock);
+
+        // TODO: Overhaul how engine handles channels
+
+
+
+    }
+    EngineChannels.store(std::max(ins, outs));
 
 
 }
